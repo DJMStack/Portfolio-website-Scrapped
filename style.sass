@@ -1,4 +1,4 @@
-$phone: 720px
+$phone: 760px
 $color: white
 $blackColor: #020304
 
@@ -8,25 +8,93 @@ $blackColor: #020304
     box-sizing: border-box
 
 html 
-  overflow: scroll
+  overflow: hidden
   background-color: black
 
+body 
+  font-family: 'Recoleta','Poppins', cursive, Helvetica, Arial, sans-serif
+  box-shadow: inset 0px 0px 2000px rgba(0, 0, 0, 0.91)
+  color: $color
+  box-sizing: content-box
+	
+
+
+    //body
+.menu-name
+  pointer-events: none
+  transform: translate(0px, 50vh) rotate(270deg)
+  color: black
   
-.main-bg
+
+.menu
+  position: fixed
+  height: 100vh
+  background: white
+  width: 6vw
+  box-shadow: 1px 0 2px rgba(0,0,0,.2)
+  transition: 1s
+  &:hover
+    width: 40vw
+    .menu-name
+      display: none
+  &:hover ~ .container
+    transform: perspective(80vw) rotateY(10deg) translateX(35vw) scaleY(1.2)
+  &:hover nav
+    left: 20%
+
+.container
   background: url(/web-backgrounds/bg5.jpg) center fixed
   position: absolute
-  opacity: .5
   width:100%
   height:100%
-  background-size: 100
+  background-size: cover
   background-repeat: no-repeat
   z-index: -1
+  transition: 1s
+  transform-origin: left center
+  color: #D2D2D0
+  
+  #home-content
+    padding: 100px 20%
 
+  #contact-content
+    padding: 25% 20%
+nav
+  position: absolute
+  margin: 25vh 0
+  left: -1000px
+  transition: .5s
+  ul
+    color: white
+    text-transform: uppercase
+    list-style-type: none
+  li
+    margin: 50% 0
+    letter-spacing: .3em
+  a
+    font-size: 30px 
+    text-decoration: none
+    color: black
+    font-weight: 600
+    &:hover
+      text-decoration: underline
 
-body 
-    font-family: 'Recoleta','Poppins', cursive, Helvetica, Arial, sans-serif
-    box-shadow: inset 0px 0px 2000px rgba(0, 0, 0, 0.91)
-    color: $color
+p
+  line-height: 1.5em
+
+h1
+  font-size: 54px
+  color: white
+h2
+  color: white
+  font-size: 42px
+  
+form
+  background-color: black
+
+input
+  height: 40px
+  border-radius: 5px
 
 
 //typewriter
@@ -47,73 +115,43 @@ body
   width:100%
   height:100%
   content: ""
-  opacity: .09
-  z-index: 100
+  opacity: .1
+  z-index: 1
   pointer-events: none
-  background: url(/web-backgrounds/noise6.gif)
-iuui
-.main
+  background-color: red
+  background: url(/web-backgrounds/noise5.gif) 
   display: block
-
 
 img
   position: relative
   z-index: 2
 
+.main
+  height:100vh
 
 .main-img
-  left: 70%
-  top: 300px
-  height: 300px
+  left: 47%
+  transform: translate(-50%,-50%)
+  top: 5em
+  height: 250px
   border-radius: 25px
+  margin: 4em 0 4em 0
 
 section
   position: relative
   z-index: 2
 
   //gallery
-.cardholder
-  margin-top: 150px
-  perspective: 600px
 
-.card
-  width: 300px
-  height: 300px
-  background-color: transparent
-  transform: rotateY(25deg)
-
-  transition: all 1s ease
-  color: transparent
-
-  &:hover
-    width: 300px
-    height: 300px
-    background-color: transparent
-    transform: rotateY(0deg)
-    box-shadow: 0px 0px 36px 2px rgba(0, 0, 0, 0.25)
-    color: black
-
-    p
-      background-color: white
-
-p.desc
-  z-index: 999
-  position: absolute
-  top: 10px
-  padding: 10px
-
-  &:hover
+ 
 
 
+// favicon
 .favicon
   position: absolute !important
   height: 2em
   transform: translate(0, 0)
 
-h1, .typewriter
-
-h2
-  text
 
   //Animations
 
@@ -127,21 +165,15 @@ h2
   //phone view
 @media (max-width: $phone )
   .main-img
-    left: 50%
+    left: 47%
     transform: translate(-50%,-50%)
-    top: 5em
+
     height: 200px
     border-radius: 25px
     margin: 4em 0 4em 0
 
-  .main-img
-    top: 100px
-
-  .typewriter
-
   h1, .typewriter
     font-size: 2em
-    color: white
     text-transform: capitalize
 
   #container
@@ -172,4 +204,14 @@ h2
         width:100%
   .cardholder
     margin-top: 0
-  
+
+
+  .menu
+    width: 8vw
+
+  nav
+    li
+      margin: 50% 0
+      letter-spacing: .3em
+    a
+      font-size: 3vw 
