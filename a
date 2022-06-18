@@ -1,9 +1,0 @@
- /* ul li 
-      position: absolute
-      margin-top: 10px
-      opacity: 80%
-      width: 75vw
-      height: 12em
-      left:50%
-      top:50%
-      transform: translate(-50%, -50%)
